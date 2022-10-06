@@ -1,3 +1,6 @@
+using Microsoft.EntityFrameworkCore;
+using ProductGrpc.Data;
+using ProductGrpc.Interfaces;
 using ProductGrpc.Services;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -7,6 +10,8 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddGrpc();
+builder.Services.AddDbContext<ProductContext>(options => options.UseInMemoryDatabase("ProductDb"));
+builder.Services.AddScoped<IProductRepository, ProductRepository>();
 
 var app = builder.Build();
 
