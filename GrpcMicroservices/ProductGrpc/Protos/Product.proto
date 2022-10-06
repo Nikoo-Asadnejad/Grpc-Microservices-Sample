@@ -3,7 +3,7 @@ syntax = "proto3";
 import "google/protobuf/empty.proto";
 option csharp_namespace = "ProductGrpc.Protos";
 
-service ProductGrpcService
+service ProductProtoService
 {
    rpc AddAsync (ProductModel) returns (AddProductResponse);
 

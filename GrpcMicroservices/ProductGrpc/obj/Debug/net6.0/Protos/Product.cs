@@ -30,11 +30,11 @@ namespace ProductGrpc.Protos {
             "ZHVjdHNSZXF1ZXN0IlgKDFByb2R1Y3RNb2RlbBIKCgJJZBgBIAEoBRINCgVU",
             "aXRsZRgCIAEoCRINCgVQcmljZRgDIAEoBRIeCgZTdGF0dXMYBCABKA4yDi5Q",
             "cm9kdWN0U3RhdHVzKi8KDVByb2R1Y3RTdGF0dXMSBwoDTG93EAASCwoHSW5T",
-            "dG9jaxABEggKBE5vbmUQAjKrAQoSUHJvZHVjdEdycGNTZXJ2aWNlEi4KCEFk",
-            "ZEFzeW5jEg0uUHJvZHVjdE1vZGVsGhMuQWRkUHJvZHVjdFJlc3BvbnNlEi0K",
-            "CEdldEFzeW5jEhIuR2V0UHJvZHVjdFJlcXVlc3QaDS5Qcm9kdWN0TW9kZWwS",
-            "NgoLR2V0QWxsQXN5bmMSFi5HZXRBbGxQcm9kdWN0c1JlcXVlc3QaDS5Qcm9k",
-            "dWN0TW9kZWwwAUIVqgISUHJvZHVjdEdycGMuUHJvdG9zYgZwcm90bzM="));
+            "dG9jaxABEggKBE5vbmUQAjKsAQoTUHJvZHVjdFByb3RvU2VydmljZRIuCghB",
+            "ZGRBc3luYxINLlByb2R1Y3RNb2RlbBoTLkFkZFByb2R1Y3RSZXNwb25zZRIt",
+            "CghHZXRBc3luYxISLkdldFByb2R1Y3RSZXF1ZXN0Gg0uUHJvZHVjdE1vZGVs",
+            "EjYKC0dldEFsbEFzeW5jEhYuR2V0QWxsUHJvZHVjdHNSZXF1ZXN0Gg0uUHJv",
+            "ZHVjdE1vZGVsMAFCFaoCElByb2R1Y3RHcnBjLlByb3Rvc2IGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Google.Protobuf.WellKnownTypes.EmptyReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::ProductGrpc.Protos.ProductStatus), }, null, new pbr::GeneratedClrTypeInfo[] {
