@@ -32,7 +32,7 @@ public class ProductRepository : IProductRepository
   public async Task<Product> GetAsync(int id)
   => await _context.Products.Where(x => x.Id == id).FirstOrDefaultAsync();
 
-  public async Task<List<Product>> GetAll()
+  public async Task<List<Product>> GetAllAsync()
     => await _context.Products.ToListAsync();
 
 }
