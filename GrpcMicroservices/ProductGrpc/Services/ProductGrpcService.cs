@@ -17,14 +17,21 @@ public class ProductGrpcService : ProductProtoService.ProductProtoServiceBase
   public override async Task<AddProductResponse> AddAsync(ProductModel request, ServerCallContext context)
   {
     bool isSuccessful = await _productRepository.AddAsync(_mapper.Map<Product>(request));
+
+    if (!isSuccessful)
+      throw new RpcException(Status.DefaultCancelled);
+
     AddProductResponse addProductResponse = new() { Result = isSuccessful };
     return addProductResponse;
 
-  }
-  
+  }  
   public override async Task<ProductModel> GetAsync(GetProductRequest request, ServerCallContext context)
   {
     var result =await _productRepository.GetAsync(request.Id);
+
+    if (result == null)
+      throw new RpcException(new Status(StatusCode.NotFound , "Item is noy found"));
+
     ProductModel productModel = _mapper.Map<ProductModel>(result);
     return productModel;
   }
@@ -32,9 +39,10 @@ public class ProductGrpcService : ProductProtoService.ProductProtoServiceBase
   {
     var result = await _productRepository.GetAllAsync();
 
-    List<ProductModel> productModels = new();
+    if (result == null)
+      throw new RpcException(new Status(StatusCode.NotFound, "Item is noy found"));
 
-    productModels.ForEach(async x => await responseStream.WriteAsync(_mapper.Map<ProductModel>(x)));
+    result.ForEach(async x => await responseStream.WriteAsync(_mapper.Map<ProductModel>(x)));
 
   }
 
