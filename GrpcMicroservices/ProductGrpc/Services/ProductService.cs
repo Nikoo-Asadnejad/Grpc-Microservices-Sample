@@ -1,13 +1,14 @@
 using Microsoft.EntityFrameworkCore;
 using ProductGrpc.Data;
+using ProductGrpc.Interfaces;
 using ProductGrpc.Models;
 using System.ComponentModel;
 
 namespace ProductGrpc.Services;
-public class ProductService
+public class ProductRepository : IProductRepository
 {
   private readonly ProductContext _context;
-  public ProductService(ProductContext context)
+  public ProductRepository(ProductContext context)
   {
     _context = context;
   }

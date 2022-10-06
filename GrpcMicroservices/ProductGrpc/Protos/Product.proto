@@ -1,0 +1,42 @@
+syntax = "proto3";
+
+import "google/protobuf/empty.proto";
+option csharp_namespace = "ProductGrpc.Protos";
+
+service ProductGrpcService
+{
+   rpc AddAsync (ProductModel) returns (AddProductResponse);
+
+   rpc GetAsync (GetProductRequest) returns (ProductModel);
+
+   rpc GetAllAsync (GetAllProductsRequest) returns (stream ProductModel);
+}
+
+message AddProductResponse
+{
+  bool result=1;
+}
+
+message GetProductRequest
+{
+  int32 Id =1;
+}
+
+message GetAllProductsRequest
+{
+
+}
+message ProductModel
+{
+  int32 Id =1;
+  string Title=2;
+  int32 Price=3;
+  ProductStatus Status =4;
+}
+
+enum ProductStatus
+{
+    Low =0;
+    InStock=1;
+    None =2;
+}
