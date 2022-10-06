@@ -31,3 +31,5 @@ D:\web development\projects\Grpc-Microservices-Sample\GrpcMicroservices\ProductG
 D:\web development\projects\Grpc-Microservices-Sample\GrpcMicroservices\ProductGrpc\obj\Debug\net6.0\ProductGrpc.pdb
 D:\web development\projects\Grpc-Microservices-Sample\GrpcMicroservices\ProductGrpc\obj\Debug\net6.0\ProductGrpc.genruntimeconfig.cache
 D:\web development\projects\Grpc-Microservices-Sample\GrpcMicroservices\ProductGrpc\obj\Debug\net6.0\ref\ProductGrpc.dll
+D:\web development\projects\Grpc-Microservices-Sample\GrpcMicroservices\ProductGrpc\bin\Debug\net6.0\AutoMapper.dll
+D:\web development\projects\Grpc-Microservices-Sample\GrpcMicroservices\ProductGrpc\bin\Debug\net6.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
