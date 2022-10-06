@@ -34,17 +34,17 @@ public class ProductGrpcService : ProductProtoService.ProductProtoServiceBase
   }
   public override async Task GetAllAsync(GetAllProductsRequest request, IServerStreamWriter<ProductModel> responseStream, ServerCallContext context)
   {
-    var result = await _productRepository.GetAll();
+    var result = await _productRepository.GetAllAsync();
 
     List<ProductModel> productModels = new();
-    productModels.AddRange(result.Select(x=> new ProductModel
-    {
-      Id=x.Id,
-      Price=x.Price,
-      Status = (ProductStatus)x.Status,
-      Title = x.Title
 
-    }));
+    productModels.ForEach(async x => await responseStream.WriteAsync(
+      new ProductModel()
+      { Id = x.Id,
+        Title = x.Title,
+        Price = x.Price,
+        Status =(ProductStatus) x.Status }
+      ));
 
   }
 
